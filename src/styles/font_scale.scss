@@ -1,0 +1,118 @@
+// Resetting from the mobile up!
+//
+// Dropping the root* element font size to 14px is something
+// I do on almost all projects, a 16px font size on mobiles
+// is not normally needed. --> Only my opinion of course!
+//
+// At mobile size I used the scale "Major Second" from
+// type-cale.com to set out the heading sizes as well as the
+// "Major Third" scale for the .display-* classes however my
+// technique was to begin the scale from the h1's front size.
+// To do this simply do the h1 font size * scale size. So in
+// in this example it was 1.602 * 1.250 = 2.0025 I went with
+// 2em to keep it simple.
+//
+//------------------------------------------------------------//
+html,
+body {
+  font-size: 14px !important;
+}
+h1 {
+  font-size: 1.602rem;
+}
+h2 {
+  font-size: 1.424rem;
+}
+h3 {
+  font-size: 1.266rem;
+}
+h4 {
+  font-size: 1.125rem;
+}
+h5 {
+  font-size: 0.889rem;
+}
+h6 {
+  font-size: 0.79rem;
+}
+.display-1 {
+  font-size: 3.906rem;
+}
+.display-2 {
+  font-size: 3.125rem;
+}
+.display-3 {
+  font-size: 2.5rem;
+}
+.display-4 {
+  font-size: 2rem;
+}
+
+// Medium devices (tablets, 48em and up)
+//
+// At this point you have overridden Bootstraps rem's and are
+// into module based font sizes should you require it.
+//
+// I took a while over this change because I felt that there
+// is no reason why I cant use a modified scale on another
+// device size. So I did, the headings have now taken on
+// "Perfect Fourth" and the dislpay-* has been put to the
+// Bootstrap defaults.
+//
+//------------------------------------------------------------//
+@media (min-width: 48rem) {
+  h1 {
+    font-size: 2.441rem;
+  }
+  h2 {
+    font-size: 1.953rem;
+  }
+  h3 {
+    font-size: 1.563rem;
+  }
+  h4 {
+    font-size: 1.25rem;
+  }
+  .display-1 {
+    font-size: 6rem;
+  }
+  .display-2 {
+    font-size: 5.5rem;
+  }
+  .display-3 {
+    font-size: 4.5rem;
+  }
+  .display-4 {
+    font-size: 3.5rem;
+  }
+}
+
+// Large devices (desktops, 62em and up)
+@media (min-width: 62rem) {
+  html,
+  body {
+    font-size: 16px !important;
+  }
+}
+
+// Extra large devices (large desktops, 75em and up)
+@media (min-width: 75rem) {
+  html,
+  body {
+    font-size: 18px !important;
+  }
+}
+
+// Pen Specific Styles
+.jumbotron {
+  font-size: 16px;
+  @media (min-width: 62rem) {
+    font-size: 20px;
+  }
+  h1 {
+    border-bottom: 4px solid #0275d8;
+  }
+  p.lead {
+    border-radius: 4px;
+  }
+}

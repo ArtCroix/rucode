@@ -1,0 +1,8 @@
+.nav-container {
+  background-color: #00248c;
+  width: 100%;
+  & nav {
+    background-color: #00248c;
+    max-width: 1380px;
+  }
+}

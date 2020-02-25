@@ -1,0 +1,33 @@
+.header {
+  background-image: url("../images_css/header_bg.png");
+  /*   height: 100vh;
+  height: -webkit-fill-available; */
+  //   height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+  &__info-container {
+    max-width: 800px;
+    &-item {
+      &-text {
+        text-align: left;
+        // font-size: 30px;
+        font-weight: bold;
+        font-size: calc(10px + 2.5vmin);
+        display: flex;
+        align-items: center;
+      }
+      &-date {
+        font-style: normal;
+        font-weight: bold;
+        font-size: calc(10px + 2vmin);
+        line-height: 110%;
+        align-items: center;
+        text-transform: uppercase;
+        color: #ffc700;
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.accordion {
+  &_wrapper {
+    max-width: 650px;
+    margin: auto;
+  }
+  &__header {
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #00248c;
+    margin: 0;
+  }
+  &__sub-header {
+    font-size: 0.9rem;
+    color: #00248c;
+    margin: 0;
+  }
+  &__body {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0.4) 0.01%,
+      #ffffff 100%
+    );
+    &-text {
+      padding: 0.8rem;
+      margin: 0;
+      color: #010841;
+    }
+  }
+}

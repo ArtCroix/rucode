@@ -1,0 +1,12 @@
+.carousel-element {
+  &__text-content {
+    &_header {
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+    &_body {
+      font-size: 0.75rem;
+      line-height: 150%;
+    }
+  }
+}
