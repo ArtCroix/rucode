@@ -1,5 +1,6 @@
 import React from "react";
 import { Accordion, useAccordionToggle } from "react-bootstrap";
+import ReactHtml from "raw-html-react";
 
 class AccordionTemplate extends React.Component {
   constructor(props) {
@@ -66,13 +67,13 @@ class AccordionTemplate extends React.Component {
               <img
                 id={"plus" + key + this.title}
                 className="img-fluid"
-                src={process.env.PUBLIC_URL + " /images/icons/plus.svg"}
+                src={process.env.PUBLIC_URL + "/images/icons/plus.svg"}
                 alt=""
               />
               <img
                 id={"minus" + key + this.title}
                 className="img-fluid d-none"
-                src={process.env.PUBLIC_URL + " /images/icons/minus.svg"}
+                src={process.env.PUBLIC_URL + "/images/icons/minus.svg"}
                 alt=""
               />
             </div>
@@ -81,7 +82,9 @@ class AccordionTemplate extends React.Component {
 
         <Accordion.Collapse eventKey={key}>
           <div className="accordion__body">
-            <p className="accordion__body-text">{body}</p>
+            <div className="accordion__body-text">
+              <ReactHtml html={body} />
+            </div>
           </div>
         </Accordion.Collapse>
         <hr className="m-0 p-0" />
@@ -92,7 +95,7 @@ class AccordionTemplate extends React.Component {
   render() {
     return (
       <div className="accordion accordion_wrapper">
-        {this.header != "" && (
+        {this.header !== "" && (
           <div className="row align-items-center mx-auto no-gutters justify-content-between">
             <div className="col-sm-6 col-4 text-left">
               <p className="accordion__header mb-2">{this.header}</p>

@@ -14,7 +14,10 @@ class Regions extends React.Component {
         </div>
         <div className="section__body">
           <div className="section__body-block row">
-            <img className="col-10 col-sm-12 mx-auto" src=" /images/map.png" />
+            <img
+              className="col-10 col-sm-12 mx-auto"
+              src={process.env.PUBLIC_URL + "/images/map.png"}
+            />
           </div>
         </div>
       </section>

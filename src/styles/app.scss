@@ -14,10 +14,16 @@
 
 html {
   height: 100%;
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
 }
 
 #root {
+  background-image: url("../images_css/main_bg.jpg");
+  background-blend-mode: multiply;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
   min-height: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -54,6 +60,21 @@ code {
     color: #ffffff;
   }
 }
+.rose-button {
+  background: linear-gradient(180deg, #ff4545 0%, #dd063a 100%);
+  box-shadow: 0px 4px 0px #010841;
+  border-radius: 40px;
+  border: none;
+  padding: 12px 25px;
+  &__text {
+    font-weight: bold;
+    font-size: 0.8rem;
+
+    margin: 0;
+    text-align: center;
+    color: #ffffff;
+  }
+}
 
 .dark-blue {
   color: #00248c;
@@ -67,10 +88,13 @@ code {
   &_coach {
     background: #dd063a;
   }
+  &__coach-image {
+    max-width: 150px;
+  }
   &__coach-info {
     font-family: IBM Plex Mono;
     font-style: normal;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     line-height: 140%;
   }
   &__coach-name {
@@ -82,6 +106,9 @@ code {
   }
 }
 
+.ws-image {
+  max-width: 600px;
+}
 h1,
 h2,
 h3,

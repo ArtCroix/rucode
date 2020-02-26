@@ -14,7 +14,7 @@ class Reviews extends React.Component {
       const { className, style, onClick } = props;
       return (
         <img
-          src={process.env.PUBLIC_URL + " /images/icons/arrow_right.svg"}
+          src={process.env.PUBLIC_URL + "/images/icons/arrow_right.svg"}
           className={className}
           style={{ ...style, display: "block" }}
           onClick={onClick}
@@ -48,7 +48,7 @@ class Reviews extends React.Component {
         <div className="section__header">
           <h3>
             <b>
-              Отборы<span className="section__header-dash">_</span>
+              Отзывы<span className="section__header-dash">_</span>
             </b>
           </h3>
         </div>
@@ -60,7 +60,7 @@ class Reviews extends React.Component {
                   <div className="col-sm-2">
                     <img
                       className="img-fluid w-75"
-                      src={process.env.PUBLIC_URL + " /images/stepanov.png"}
+                      src={process.env.PUBLIC_URL + "/images/stepanov.png"}
                       alt=""
                     />
                   </div>

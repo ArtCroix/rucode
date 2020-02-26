@@ -6,19 +6,36 @@ class Course extends React.Component {
     accordionData: [
       {
         sub_header: "Базовые алгоритмы",
-        body: ""
+        body: `Асимптотика <br>
+                Линейные алгоритмы<br>
+                Бинарный поиск.Часть 1<br>
+                Бинарный поиск.Часть 2
+                `
       },
       {
         sub_header: "Теория чисел",
-        body: ""
+        body: `
+        Числа Фибоначчи
+Алгоритм Евклида<br>
+Решето Эратосфена<br>
+Операции по модулю<br>
+Теорема Эйлера<br>
+Бинарное возведение в степень и деление по модулю`
       },
       {
         sub_header: "Динамическое программирование",
-        body: ""
+        body: `Определения<br>
+Линейное динамическое программирование<br>
+Квадратное динамическое программирование<br>
+Восстановление ответа<br>
+Задача о рюкзаке
+`
       },
       {
         sub_header: "Теория графов",
-        body: ""
+        body: `Базовые определения теории графов<br>
+Обход в глубину<br>
+Обход в ширину`
       }
     ]
   };
@@ -28,6 +45,14 @@ class Course extends React.Component {
   render() {
     return (
       <section id="course" className="main section">
+        <div className=" row no-gutters justify-content-center">
+          <img
+            className="section__number-image col-2"
+            src={process.env.PUBLIC_URL + "/images/icons/sec_1.svg"}
+            alt=""
+          />
+        </div>
+
         <div className="section__header">
           <h3>
             <b>
@@ -38,7 +63,7 @@ class Course extends React.Component {
         <div className="section__body">
           <div className="section__body-block">
             <p className="section__body-block-text section__body-block-text_bold text-center super-dark-blue">
-              Подтяни свои знания с ведущими тренерами международного
+              Прокачай свои знания с ведущими тренерами международного
               образовательного проекта Moscow Workshops!
             </p>
           </div>
@@ -48,10 +73,9 @@ class Course extends React.Component {
                 <div className="row align-items-center no-gutters">
                   <img
                     className="col-sm-2 col-4"
-                    src={process.env.PUBLIC_URL + " /images/icons/calendar.svg"}
+                    src={process.env.PUBLIC_URL + "/images/icons/calendar.svg"}
                     alt=""
                   />
-
                   <div className="section__body-block-schedule-discribe col-sm-6 col-4 text-center">
                     <span className="">2 марта</span>
                   </div>
@@ -61,7 +85,7 @@ class Course extends React.Component {
                 <div className="row align-items-center no-gutters justify-content-center">
                   <img
                     className="col-sm-2 col-4"
-                    src={process.env.PUBLIC_URL + " /images/icons/watch.svg"}
+                    src={process.env.PUBLIC_URL + "/images/icons/watch.svg"}
                     alt=""
                   />
 
@@ -74,7 +98,7 @@ class Course extends React.Component {
                 <div className="row align-items-center no-gutters justify-content-end">
                   <img
                     className="col-sm-2 col-4"
-                    src={process.env.PUBLIC_URL + " /images/icons/screen.svg"}
+                    src={process.env.PUBLIC_URL + "/images/icons/screen.svg"}
                     alt=""
                   />
 
@@ -87,25 +111,40 @@ class Course extends React.Component {
           </div>
           <div className="section__body-block mt-5">
             <p className="section__body-block-text section__body-block-text text-center super-dark-blue">
-              Поймете, какого типа задачи необходимо решать на соревнованиях,
-              что такое эффективная программа, как оценивать эффективность
-              алгоритма. Разберете базовые теоретические и практические аспекты:
-              от базовых линейных алгоритмов до основ теории графов и их
-              обходов. Также в курсе рассматриваются вопросы асимптотического
-              анализа и оценки эффективности программы.
+              Онлайн-курс “Быстрый старт в спортивное программирование”
+              подготовлен ведущими тренерами Moscow Workshops. Курс поможет
+              войти в мир спортивного программирования. Рассматриваются базовые
+              теоретические и практические аспекты, необходимые для успешного
+              участия в состязании по спортивному программированию любого
+              уровня: от базовых линейных алгоритмов до основ теории графов и их
+              обходов. Также рассматриваются вопросы асимптотического анализа и
+              оценки эффективности программы.
             </p>
           </div>
+          {/*           <div className="section__body-block mt-5 text-center mx-auto">
+            <iframe
+              src="https://drive.google.com/file/d/1G0_MTvF9PBPtSrVVd_8fOs5lhzsMl0oG/preview"
+              width="640"
+              height="480"
+            ></iframe>
+          </div> */}
           <AccordionTemplates
             header={"Программа курса"}
             title={"course"}
             accordionData={this.state.accordionData}
           ></AccordionTemplates>
+
           <div className="section__body-block mt-5 text-center mx-auto">
-            <button className="dark-blue-button">
-              <span className="dark-blue-button__text">
-                ПОСТУПИТЬ НА ОНЛАЙН-КУРС
-              </span>
-            </button>
+            <a
+              target="_blank"
+              href="https://stepik.org/invitation/d1f1c2a5acae47cf783467d49503afc27c08c113/"
+            >
+              <button className="dark-blue-button">
+                <span className="dark-blue-button__text">
+                  ПОСТУПИТЬ НА ОНЛАЙН-КУРС
+                </span>
+              </button>
+            </a>
           </div>
         </div>
       </section>

@@ -1,8 +1,29 @@
 .nav-container {
   background-color: #00248c;
   width: 100%;
+  // position:fixed
+  // max-height: 70px;
   & nav {
     background-color: #00248c;
-    max-width: 1380px;
+    // max-width: 1580px;
+    // height: 100%;
+  }
+}
+nav {
+  background-color: #00248c;
+  // max-width: 1580px;
+  // height: 100%;
+}
+.navbar-collapse {
+  max-width: 1408px;
+  background-color: #00248c;
+}
+
+.nav-link {
+  font-size: 0.8rem;
+  color: white !important;
+  &_is-active {
+    font-size: 0.85rem;
+    color: yellow !important;
   }
 }

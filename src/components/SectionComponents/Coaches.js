@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 class Coaches extends React.Component {
   render() {
@@ -14,14 +14,14 @@ class Coaches extends React.Component {
           </h3>
         </div>
         <div className="section__body">
-          <div className="section__body-block row">
-            <Card className="card card_coach" style={{ width: "18rem" }}>
+          <div className="section__body-block justify-content-around row">
+            <Card className="card card_coach col-sm-3 px-0">
               <Card.Img
-                className="mx-auto d-block w-50 mt-2"
+                className="card__coach-image mx-auto img-fluid  mt-2"
                 variant="top"
-                src={process.env.PUBLIC_URL + " /images/rukhovich.png"}
+                src={process.env.PUBLIC_URL + "/images/rukhovich.png"}
               />
-              <Card.Body>
+              <Card.Body className="m-0 px-2">
                 <Card.Title className="card__coach-name text-white text-center">
                   Филипп Рухович
                 </Card.Title>
@@ -33,6 +33,45 @@ class Coaches extends React.Component {
                   диссертацию по теме "Внешние биллиарды вне правильных
                   многоугольников: множества полной меры, апериодические точки и
                   множества периодов.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+            <Card className="card card_coach col-sm-3 px-0">
+              <Card.Img
+                className="card__coach-image mx-auto img-fluid  mt-2"
+                variant="top"
+                src={process.env.PUBLIC_URL + "/images/nevstruev.png"}
+              />
+              <Card.Body className="m-0 px-2">
+                <Card.Title className="card__coach-name text-white text-center">
+                  Владислав Невструев
+                </Card.Title>
+                <Card.Text className="card__coach-info text-white text-center">
+                  Преподаватель различных олимпиадных школ: Летней олимпиадной
+                  школы, Зимней олимпиадной школы, Летней компьютерной школы.
+                  Преподаватель проекта Московских тренировок. Автор задач
+                  различных олимпиад: Квалификационный этап Moscow Programming
+                  Contest, Когнитивные технологии, Муниципальный этап
+                  всероссийской олимпиады школьников.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+            <Card className="card card_coach col-sm-3 px-0">
+              <Card.Img
+                className="card__coach-image mx-auto img-fluid  mt-2"
+                variant="top"
+                src={process.env.PUBLIC_URL + "/images/khristenko.png"}
+              />
+              <Card.Body className="m-0 px-2">
+                <Card.Title className="card__coach-name text-white text-center">
+                  Олег Христенко
+                </Card.Title>
+                <Card.Text className="card__coach-info text-white text-center">
+                  Chief Judge of Moscow Workshops; технический координатор
+                  Олимпиадных школ, Зимней компьютерной школы и международных
+                  сборов по программированию для подготовки к ICPC;
+                  сопредседатель жюри Moscow Programming Contest; координатор
+                  Открытого кубка имени Е.В. Панкратьева по программированию
                 </Card.Text>
               </Card.Body>
             </Card>

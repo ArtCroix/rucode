@@ -14,34 +14,57 @@ class About extends React.Component {
         <div className="section__body">
           <div className="section__body-block">
             <p className="section__body-block-text section__body-block-text_bold super-dark-blue">
-              Центр развития ИТ-образования при МФТИ объявляет о старте
-              всероссийской программы интенсивной подготовки по спортивному
-              программированию и искусственному интеллекту «Фестиваль RuCode»,
-              подготовленной при поддержке Фонда президентских грантов
+              Всероссийский фестиваль по искусственному интеллекту и спортивному
+              программированию RuCode Festival - это программа интенсивной
+              подготовки для молодых программистов, желающих повысить уровень
+              знаний и получить опыт участия в соревнованиях.
             </p>
           </div>
           <div className="section__body-block">
-            <p className="section__body-block-text super-dark-blue">
-              В рамках программы все желающие смогут повысить свой уровень
-              знаний олимпиадного программирования и искусственного интеллекта и
-              принять участие в своих первых соревнованиях. Студенческие
-              команды-победители регионального чемпионата RuCode будут
-              приглашены за счет организаторов в Москву в качестве зрителей на
-              финал студенческого чемпионата мира по программированию ICPC.
+            Этапы программы:
+            <ul className="section__body-block-text super-dark-blue">
+              <li>
+                Бесплатный онлайн-курс “Быстрый старт в спортивное
+                программирование”
+              </li>
+              <li>
+                Отборочное тестирование для желающих принять участие в очных
+                интенсивах
+              </li>
+              <li>
+                Очные интенсивы по искусственному интеллекту и спортивному
+                программированию в 10 городах России
+              </li>
+              <li>
+                Чемпионаты по искусственному интеллекту и спортивному
+                программированию в 11 городах России
+              </li>
+            </ul>
+          </div>
+          <div className="section__body-block">
+            <p className="section__body-block-text section__body-block-text super-dark-blue">
+              Студенческие команды-победители региональных чемпионатов RuCode
+              будут приглашены за счет организаторов в Москву в качестве
+              зрителей на финал студенческого чемпионата мира по
+              программированию ICPC (он пройдёт 20-26 июня 2020 года).
             </p>
-          </div>
-          <div className="section__body-block">
-            <h4 className="section__body-block-sub-header">
-              Прокачай навыки и прими участие в своих первых соревнованиях!
-            </h4>
-          </div>
-          <div className="section__body-block">
-            <h4 className="section__body-block-sub-header">Для кого</h4>
+            <p className="section__body-block-text section__body-block-text super-dark-blue">
+              Программа RuCode Festival научит решать алгоритмические задачи
+              быстро и эффективно, даст возможность поработать с датасетами
+              ведущих IT-компаний на треке, посвященном искусственному
+              интеллекту, поможет заявить о себе на соревнованиях. Доступ
+              бесплатный и открыт всем желающим!
+            </p>
+            <p className="section__body-block-text section__body-block-text super-dark-blue">
+              Для успешного прохождения программы необходимо хорошо владеть
+              основами одного из следующих языков программирования: С/С++, Java,
+              Pascal/Delphi, Python.
+            </p>
           </div>
           <div className="section__body-block row">
             <img
               className="col-10 col-sm-12 mx-auto"
-              src={process.env.PUBLIC_URL + " /images/timeline.png"}
+              src={process.env.PUBLIC_URL + "/images/timeline.png"}
             />
           </div>
           <div className="section__body-block">

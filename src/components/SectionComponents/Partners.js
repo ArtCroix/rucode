@@ -13,7 +13,22 @@ class Partners extends React.Component {
           </h3>
         </div>
         <div className="section__body">
-          <div className="section__body-block"></div>
+          <div className="section__body-block row no-gutters justify-content-center align-items-center">
+            <div className="col-sm-3">
+              <img
+                src={process.env.PUBLIC_URL + "/images/logos/fond_r.png"}
+                alt=""
+                className="img-fluid"
+              />
+            </div>
+            <div className="col-sm-3">
+              <img
+                src={process.env.PUBLIC_URL + "/images/logos/fpg.png"}
+                alt=""
+                className="img-fluid"
+              />
+            </div>
+          </div>
         </div>
       </section>
     );

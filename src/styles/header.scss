@@ -1,11 +1,11 @@
 .header {
   background-image: url("../images_css/header_bg.png");
-  /*   height: 100vh;
-  height: -webkit-fill-available; */
-  //   height: 100%;
-  background-position: center center;
+  height: 70vh;
+  /*   height: -webkit-fill-available;
+   height: 100%; */
+  background-position: bottom;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-size: cover;
   position: relative;
   &__info-container {

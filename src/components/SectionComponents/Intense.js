@@ -1,9 +1,16 @@
 import React from "react";
-
+import VenuesList from "./VenuesList";
 class Intense extends React.Component {
   render() {
     return (
       <section id="intense" className="main section">
+        <div className=" row no-gutters justify-content-center">
+          <img
+            className="section__number-image col-1"
+            src={process.env.PUBLIC_URL + "/images/icons/sec_3.svg"}
+            alt=""
+          />
+        </div>
         <div className="section__header">
           <h3>
             <b>
@@ -14,8 +21,8 @@ class Intense extends React.Component {
         <div className="section__body">
           <div className="section__body-block">
             <p className="section__body-block-text section__body-block-text_bold text-center  super-dark-blue">
-              Очные занятия с ведущими тренерами по спортивному программированию
-              и искусственному интеллекту в 10 городах России
+              Очные занятия с ведущими тренерами по искусственному интеллекту и
+              спортивному программированию в 10 городах России
             </p>
           </div>
           <div className="section__body-block">
@@ -24,7 +31,7 @@ class Intense extends React.Component {
                 <div className="row align-items-center no-gutters">
                   <img
                     className="col-sm-2 col-4"
-                    src={process.env.PUBLIC_URL + " /images/icons/calendar.svg"}
+                    src={process.env.PUBLIC_URL + "/images/icons/calendar.svg"}
                     alt=""
                   />
 
@@ -37,7 +44,7 @@ class Intense extends React.Component {
                 <div className="row align-items-center no-gutters justify-content-center">
                   <img
                     className="col-sm-2 col-4"
-                    src={process.env.PUBLIC_URL + " /images/icons/watch.svg"}
+                    src={process.env.PUBLIC_URL + "/images/icons/watch.svg"}
                     alt=""
                   />
                   <div className="section__body-block-schedule-discribe col-sm-6 col-4  text-center">
@@ -49,7 +56,7 @@ class Intense extends React.Component {
                 <div className="row align-items-center no-gutters justify-content-end">
                   <img
                     className="col-sm-2 col-4"
-                    src={process.env.PUBLIC_URL + " /images/icons/screen.svg"}
+                    src={process.env.PUBLIC_URL + "/images/icons/people.svg"}
                     alt=""
                   />
                   <div className="section__body-block-schedule-discribe col-sm-6 col-4  text-center">
@@ -61,18 +68,11 @@ class Intense extends React.Component {
           </div>
           <div className="section__body-block mt-4">
             <p className="section__body-block-text text-center super-dark-blue">
+              На интенсивы можно попасть только по результатам отборов.
               Разберете вот такие алгоритмы и отработаете вот такие навыки
             </p>
           </div>
-
-          <div className="section__body-block mt-4 text-center">
-            <a
-              href=""
-              className="section__body-block-text section__body-block-text_bold dark-blue"
-            >
-              СПИСОК ПЛОЩАДОК-УЧАСТНИКОВ
-            </a>
-          </div>
+          <VenuesList title="intense_venue_list" />
         </div>
       </section>
     );

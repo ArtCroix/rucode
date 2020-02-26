@@ -25,7 +25,7 @@ class Main extends React.Component {
           <Coaches />
           <Reviews />
           <Partners />
-          <InfoPartners />
+          {/* <InfoPartners /> */}
           <FAQ />
         </div>
       </main>
