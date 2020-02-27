@@ -36,7 +36,7 @@ class Intense extends React.Component {
                   />
 
                   <div className="section__body-block-schedule-discribe col-sm-6 col-4 text-center">
-                    <span className="">&nbsp;22&nbsp;апреля</span>
+                    <span className="">&nbsp;22-24&nbsp;апреля</span>
                   </div>
                 </div>
               </div>
@@ -69,7 +69,6 @@ class Intense extends React.Component {
           <div className="section__body-block mt-4">
             <p className="section__body-block-text text-center super-dark-blue">
               На интенсивы можно попасть только по результатам отборов.
-              Разберете вот такие алгоритмы и отработаете вот такие навыки
             </p>
           </div>
           <VenuesList title="intense_venue_list" />

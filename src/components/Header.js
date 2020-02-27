@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "./NavBar";
-
+import BlueButton from "./SectionComponents/BlueButton";
 class Header extends React.Component {
   render() {
     return (
@@ -27,16 +27,10 @@ class Header extends React.Component {
                 <p className="header__info-container-item-date my-4 text-left">
                   22—26 апреля 2020
                 </p>
-                <a
-                  href="https://stepik.org/invitation/d1f1c2a5acae47cf783467d49503afc27c08c113/"
-                  target="_blank"
-                >
-                  <button className="dark-blue-button d-block">
-                    <span className="dark-blue-button__text">
-                      ПОСТУПИТЬ НА ОНЛАЙН-КУРС
-                    </span>
-                  </button>
-                </a>
+                <BlueButton
+                  link="https://stepik.org/invitation/d1f1c2a5acae47cf783467d49503afc27c08c113/"
+                  title="поступить на онлайн-курс"
+                />
               </div>
             </div>
           </div>

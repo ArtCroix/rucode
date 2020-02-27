@@ -1,0 +1,29 @@
+.reg-button {
+  box-shadow: 0px 4px 0px #010841;
+  border-radius: 40px;
+  border: none;
+  padding: 12px 25px;
+
+  &_blue {
+    background: linear-gradient(180deg, #3050ae 0%, #0a2880 100%);
+    &:hover {
+      background: linear-gradient(180deg, #ff4545 0%, #dd063a 100%);
+    }
+  }
+  &_red {
+    background: linear-gradient(180deg, #ff4545 0%, #dd063a 100%);
+    &:hover {
+      background: linear-gradient(180deg, #3050ae 0%, #0a2880 100%);
+    }
+  }
+  &__text {
+    // font-family: Roboto Condensed;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+}

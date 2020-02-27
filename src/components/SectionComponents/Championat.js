@@ -1,7 +1,8 @@
 import React from "react";
 import VenuesList from "./VenuesList";
 import Slider from "react-slick";
-
+import BlueButton from "./BlueButton";
+import RedButton from "./RedButton";
 class Championat extends React.Component {
   render() {
     function SampleNextArrow(props) {
@@ -33,10 +34,36 @@ class Championat extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       // adaptiveHeight: true,
-      variableWidth: true,
-      className: "mt-5 mx-auto w-100 slider variable-width",
+      // variableWidth: true,
+      className: "mt-5 mx-auto w-100 ",
       nextArrow: <SampleNextArrow />,
-      prevArrow: <SamplePrevArrow />
+      prevArrow: <SamplePrevArrow />,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            initialSlide: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
     };
     return (
       <section id="championat" className="main section">
@@ -66,20 +93,20 @@ class Championat extends React.Component {
               <div className="col-sm-3">
                 <div className="row align-items-center no-gutters">
                   <img
-                    className="col-sm-2 col-4"
+                    className="img-fluid"
                     src={process.env.PUBLIC_URL + "/images/icons/calendar.svg"}
                     alt=""
                   />
 
                   <div className="section__body-block-schedule-discribe col-sm-6 col-4 text-center">
-                    <span className="">&nbsp;25&nbsp;апреля</span>
+                    <span className="">&nbsp;25-26&nbsp;апреля</span>
                   </div>
                 </div>
               </div>
               <div className="col-sm-3">
                 <div className="row align-items-center no-gutters justify-content-center">
                   <img
-                    className="col-sm-2 col-4"
+                    className="img-fluid"
                     src={process.env.PUBLIC_URL + "/images/icons/watch.svg"}
                     alt=""
                   />
@@ -91,8 +118,8 @@ class Championat extends React.Component {
               <div className="col-sm-3">
                 <div className="row align-items-center no-gutters justify-content-end">
                   <img
-                    className="col-sm-2 col-4"
-                    src={process.env.PUBLIC_URL + "/images/icons/screen.svg"}
+                    className="img-fluid"
+                    src={process.env.PUBLIC_URL + "/images/icons/people.svg"}
                     alt=""
                   />
                   <div className="section__body-block-schedule-discribe col-sm-6 col-4  text-center">
@@ -118,20 +145,22 @@ class Championat extends React.Component {
             </a>
           </div>
           <div className="section__body-block row mt-3 mx-auto justify-content-between">
-            <button className="dark-blue-button col-sm-5 text-center">
-              <span className="dark-blue-button__text">
-                ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ
-              </span>
-            </button>
-            <button className="rose-button col-sm-5 text-center">
-              <span className="dark-blue-button__text">
-                СПОРТИВНОЕ ПРОГРАММИРОВАНИЕ
-              </span>
-            </button>
+            <div className="col-sm-5 text-center">
+              <BlueButton
+                link="https://stepik.org/invitation/d1f1c2a5acae47cf783467d49503afc27c08c113/"
+                title="ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ"
+              />
+            </div>
+            <div className="col-sm-6 text-center">
+              <RedButton
+                link="https://stepik.org/invitation/d1f1c2a5acae47cf783467d49503afc27c08c113/"
+                title="СПОРТИВНОЕ ПРОГРАММИРОВАНИЕ"
+              />
+            </div>
           </div>
           <div className="section__body-block mx-auto text-center mt-3">
             <a href="">
-              <small id="emailHelp" class="form-text text-muted">
+              <small id="emailHelp" className="form-text text-muted">
                 <u>Положение чемпионата</u>
               </small>
             </a>
@@ -139,24 +168,45 @@ class Championat extends React.Component {
 
           <div className="section__body-block">
             <Slider {...settings}>
-              <div className="carousel-element mx-2">
+              <div className="carousel-element ">
                 <img
                   className="ws-image img-fluid mx-auto"
-                  src={process.env.PUBLIC_URL + "/images/ws1.jpg"}
+                  src={process.env.PUBLIC_URL + "/images/ws_photo/ws1.jpg"}
                   alt=""
                 />
               </div>
-              <div className="carousel-element mx-2">
+              <div className="carousel-element ">
                 <img
                   className="ws-image img-fluid mx-auto"
-                  src={process.env.PUBLIC_URL + "/images/ws2.jpg"}
+                  src={process.env.PUBLIC_URL + "/images/ws_photo/ws2.jpg"}
                   alt=""
                 />
               </div>
-              <div className="carousel-element mx-2">
+              <div className="carousel-element ">
                 <img
                   className="ws-image img-fluid mx-auto"
-                  src={process.env.PUBLIC_URL + "/images/ws3.jpg"}
+                  src={process.env.PUBLIC_URL + "/images/ws_photo/ws3.jpg"}
+                  alt=""
+                />
+              </div>
+              <div className="carousel-element ">
+                <img
+                  className="ws-image img-fluid mx-auto"
+                  src={process.env.PUBLIC_URL + "/images/ws_photo/ws4.jpg"}
+                  alt=""
+                />
+              </div>
+              <div className="carousel-element ">
+                <img
+                  className="ws-image img-fluid mx-auto"
+                  src={process.env.PUBLIC_URL + "/images/ws_photo/ws5.jpg"}
+                  alt=""
+                />
+              </div>
+              <div className="carousel-element ">
+                <img
+                  className="ws-image img-fluid mx-auto"
+                  src={process.env.PUBLIC_URL + "/images/ws_photo/ws6.jpg"}
                   alt=""
                 />
               </div>

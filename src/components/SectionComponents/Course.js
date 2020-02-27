@@ -1,5 +1,6 @@
 import React from "react";
 import AccordionTemplates from "./AccordionTemplate";
+import BlueButton from "./BlueButton";
 
 class Course extends React.Component {
   state = {
@@ -15,10 +16,9 @@ class Course extends React.Component {
       {
         sub_header: "Теория чисел",
         body: `
-        Числа Фибоначчи
+        Целые типы данных, решето Эратосфена<br>
+        Операции по модулю<br>
 Алгоритм Евклида<br>
-Решето Эратосфена<br>
-Операции по модулю<br>
 Теорема Эйлера<br>
 Бинарное возведение в степень и деление по модулю`
       },
@@ -88,7 +88,6 @@ class Course extends React.Component {
                     src={process.env.PUBLIC_URL + "/images/icons/watch.svg"}
                     alt=""
                   />
-
                   <div className="section__body-block-schedule-discribe col-sm-6 col-4  text-center">
                     <span className="">1 месяц</span>
                   </div>
@@ -121,13 +120,16 @@ class Course extends React.Component {
               оценки эффективности программы.
             </p>
           </div>
-          {/*           <div className="section__body-block mt-5 text-center mx-auto">
+          <div className="section__body-block mt-5 text-center mx-auto embed-responsive embed-responsive-16by9 mb-4">
             <iframe
-              src="https://drive.google.com/file/d/1G0_MTvF9PBPtSrVVd_8fOs5lhzsMl0oG/preview"
-              width="640"
-              height="480"
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/EzFcg1lfre0"
+              frameBorder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
             ></iframe>
-          </div> */}
+          </div>
           <AccordionTemplates
             header={"Программа курса"}
             title={"course"}
@@ -135,16 +137,10 @@ class Course extends React.Component {
           ></AccordionTemplates>
 
           <div className="section__body-block mt-5 text-center mx-auto">
-            <a
-              target="_blank"
-              href="https://stepik.org/invitation/d1f1c2a5acae47cf783467d49503afc27c08c113/"
-            >
-              <button className="dark-blue-button">
-                <span className="dark-blue-button__text">
-                  ПОСТУПИТЬ НА ОНЛАЙН-КУРС
-                </span>
-              </button>
-            </a>
+            <BlueButton
+              link="https://stepik.org/invitation/d1f1c2a5acae47cf783467d49503afc27c08c113/"
+              title="поступить на онлайн-курс"
+            />
           </div>
         </div>
       </section>

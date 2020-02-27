@@ -21,7 +21,7 @@ class About extends React.Component {
             </p>
           </div>
           <div className="section__body-block">
-            Этапы программы:
+            <span className="super-dark-blue">Этапы программы:</span>
             <ul className="section__body-block-text super-dark-blue">
               <li>
                 Бесплатный онлайн-курс “Быстрый старт в спортивное

@@ -23,10 +23,10 @@ class Main extends React.Component {
           <Championat />
           <Regions />
           <Coaches />
-          <Reviews />
+          {/* <Reviews /> */}
           <Partners />
           {/* <InfoPartners /> */}
-          <FAQ />
+          {/* <FAQ /> */}
         </div>
       </main>
     );

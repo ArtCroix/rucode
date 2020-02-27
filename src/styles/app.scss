@@ -9,6 +9,7 @@
 @import "accordion";
 @import "font_scale";
 @import "carousel";
+@import "buttons";
 @import "fonts/roboto/robotocondensed";
 @import "fonts/ibmplexmono/ibmplexmono";
 
@@ -45,37 +46,6 @@ code {
     monospace;
 }
 
-.dark-blue-button {
-  background: linear-gradient(180deg, #3050ae 0%, #0a2880 100%);
-  box-shadow: 0px 4px 0px #010841;
-  border-radius: 40px;
-  border: none;
-  padding: 12px 25px;
-  &__text {
-    font-weight: bold;
-    font-size: 0.8rem;
-
-    margin: 0;
-    text-align: center;
-    color: #ffffff;
-  }
-}
-.rose-button {
-  background: linear-gradient(180deg, #ff4545 0%, #dd063a 100%);
-  box-shadow: 0px 4px 0px #010841;
-  border-radius: 40px;
-  border: none;
-  padding: 12px 25px;
-  &__text {
-    font-weight: bold;
-    font-size: 0.8rem;
-
-    margin: 0;
-    text-align: center;
-    color: #ffffff;
-  }
-}
-
 .dark-blue {
   color: #00248c;
 }
@@ -108,7 +78,9 @@ code {
 
 .ws-image {
   max-width: 600px;
+  width: 100%;
 }
+ul,
 h1,
 h2,
 h3,

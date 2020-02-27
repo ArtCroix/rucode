@@ -1,5 +1,5 @@
 import React from "react";
-
+import BlueButton from "./BlueButton";
 class Selections extends React.Component {
   render() {
     return (
@@ -29,7 +29,7 @@ class Selections extends React.Component {
           <div className="section__body-block">
             <p className="section__body-block-text text-center super-dark-blue">
               Отборочное тестирование будет проводиться онлайн. Регистрация
-              открыта всем желающим до 3 апреля 2020 года
+              будет открыта всем желающим.
             </p>
           </div>
           <div className="section__body-block">
@@ -43,7 +43,7 @@ class Selections extends React.Component {
                   />
 
                   <div className="section__body-block-schedule-discribe col-sm-6 col-4 text-center">
-                    <span className="">&nbsp;4&nbsp;апреля</span>
+                    <span className="">&nbsp;4-5&nbsp;апреля</span>
                   </div>
                 </div>
               </div>
@@ -74,13 +74,10 @@ class Selections extends React.Component {
             </div>
           </div>
           <div className="section__body-block mt-5 text-center mx-auto">
-            <a href="http://" target="_blank" rel="noopener noreferrer">
-              <button className="dark-blue-button">
-                <span className="dark-blue-button__text">
-                  УЧАСТВОВАТЬ В ОТБОРАХ
-                </span>
-              </button>
-            </a>
+            <BlueButton
+              link="https://stepik.org/invitation/d1f1c2a5acae47cf783467d49503afc27c08c113/"
+              title="участие в отборах"
+            />
           </div>
         </div>
       </section>
