@@ -21,7 +21,7 @@ class Championat extends React.Component {
       const { className, style, onClick } = props;
       return (
         <img
-          src={process.env.PUBLIC_URL + " /images/icons/arrow_left.svg"}
+          src={process.env.PUBLIC_URL + "/images/icons/arrow_left.svg"}
           className={className}
           style={{ ...style, display: "block" }}
           onClick={onClick}
