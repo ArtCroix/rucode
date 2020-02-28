@@ -4,7 +4,7 @@ class Button extends React.Component {
   constructor(props) {
     super(props);
     this.title = props.title;
-    this.link = props.href;
+    this.link = props.link;
   }
   render() {
     return (
