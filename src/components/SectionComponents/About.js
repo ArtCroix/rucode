@@ -1,5 +1,5 @@
 import React from "react";
-
+import Timeline from "./Timeline";
 class About extends React.Component {
   render() {
     return (
@@ -64,17 +64,18 @@ class About extends React.Component {
           <div className="section__body-block row">
             <img
               className="col-10 col-sm-12 mx-auto"
-              src={process.env.PUBLIC_URL + "/images/timeline.png"}
+              src={process.env.PUBLIC_URL + "/images/timeline.svg"}
             />
           </div>
           <div className="section__body-block">
             <p className="section__body-block-text super-dark-blue">
               В рамках программы все желающие смогут повысить свой уровень
-              знаний олимпиадного программирования и искусственного интеллекта и
-              принять участие в своих первых соревнованиях. Студенческие
-              команды-победители регионального чемпионата RuCode будут
-              приглашены за счет организаторов в Москву в качестве зрителей на
-              финал студенческого чемпионата мира по программированию ICPC.
+              знаний в области олимпиадного программирования и искусственного
+              интеллекта и принять участие в своих первых соревнованиях.
+              Студенческие команды-победители регионального чемпионата RuCode
+              будут приглашены за счет организаторов в Москву в качестве
+              зрителей на финал студенческого чемпионата мира по
+              программированию ICPC.
             </p>
           </div>
         </div>

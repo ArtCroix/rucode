@@ -10,6 +10,7 @@
 @import "font_scale";
 @import "carousel";
 @import "buttons";
+@import "small_elements";
 @import "fonts/roboto/robotocondensed";
 @import "fonts/ibmplexmono/ibmplexmono";
 
@@ -31,6 +32,13 @@ html {
   grid-template-columns: 100%;
 }
 
+button {
+  outline: none;
+  border: none;
+  &:focus {
+    outline: 0 !important;
+  }
+}
 body {
   height: 100%;
   margin: 0;
@@ -46,40 +54,6 @@ code {
     monospace;
 }
 
-.dark-blue {
-  color: #00248c;
-}
-
-.super-dark-blue {
-  color: #010841;
-}
-
-.card {
-  &_coach {
-    background: #dd063a;
-  }
-  &__coach-image {
-    max-width: 150px;
-  }
-  &__coach-info {
-    font-family: IBM Plex Mono;
-    font-style: normal;
-    font-size: 0.7rem;
-    line-height: 140%;
-  }
-  &__coach-name {
-    font-family: IBM Plex Mono;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 1rem;
-    line-height: 110%;
-  }
-}
-
-.ws-image {
-  max-width: 600px;
-  width: 100%;
-}
 ul,
 h1,
 h2,
@@ -88,6 +62,7 @@ h4,
 h5,
 h6,
 p,
+a,
 span {
   font-family: Roboto Condensed;
 }

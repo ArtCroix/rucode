@@ -14,14 +14,14 @@ class Partners extends React.Component {
         </div>
         <div className="section__body">
           <div className="section__body-block row no-gutters justify-content-center align-items-center">
-            <div className="col-sm-3">
+            <div className="col-sm-3 text-center">
               <img
                 src={process.env.PUBLIC_URL + "/images/logos/fond_r.png"}
                 alt=""
                 className="img-fluid"
               />
             </div>
-            <div className="col-sm-3">
+            <div className="col-sm-3 text-center">
               <img
                 src={process.env.PUBLIC_URL + "/images/logos/fpg.png"}
                 alt=""

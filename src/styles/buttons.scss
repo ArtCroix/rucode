@@ -4,6 +4,16 @@
   border: none;
   padding: 12px 25px;
 
+  &__text {
+    // font-family: Roboto Condensed;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
   &_blue {
     background: linear-gradient(180deg, #3050ae 0%, #0a2880 100%);
     &:hover {
@@ -15,15 +25,5 @@
     &:hover {
       background: linear-gradient(180deg, #3050ae 0%, #0a2880 100%);
     }
-  }
-  &__text {
-    // font-family: Roboto Condensed;
-    padding: 1rem;
-    font-weight: bold;
-    font-size: 1.1rem;
-    margin: 0;
-    text-align: center;
-    text-transform: uppercase;
-    color: #ffffff;
   }
 }

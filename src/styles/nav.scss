@@ -9,27 +9,40 @@
     // height: 100%;
   }
 }
-nav {
+.nav {
   background-color: #00248c;
+  &__scroll-spy-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 1580px;
+  }
   // max-width: 1580px;
   // height: 100%;
 }
 .navbar-collapse {
-  max-width: 1408px;
+  // max-width: 1408px;
   background-color: #00248c;
 }
-
+.navbar-nav {
+  max-width: 1500px;
+  width: 100%;
+  justify-content: space-between;
+}
 .nav-link {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: white !important;
+  /*  margin-left: 3.5rem;
+  margin-right: 3.5rem; */
+  &:hover {
+    color: orangered !important;
+  }
   &_is-active {
     font-size: 0.85rem;
     color: yellow !important;
   }
 }
-/* .navbar-light .navbar-toggler-icon {
-  background-image: url('data:image/svg+xml,%3csvg xmlns=http://www.w3.org/2000/svg width=30 hei…miterlimit=10 stroke-width=2 d=M4 7h22M4 15h22M4 23h22/%3e%3c/svg%3e');
-} */
+
 .navbar-light .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }

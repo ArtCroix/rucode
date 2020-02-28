@@ -1,0 +1,54 @@
+.dark-blue {
+  color: #00248c;
+}
+
+.super-dark-blue {
+  color: #010841;
+}
+
+.card {
+  &_coach {
+    background: #dd063a;
+  }
+  &__coach-image {
+    max-width: 150px;
+  }
+  &__coach-info {
+    font-family: IBM Plex Mono;
+    font-style: normal;
+    font-size: 0.7rem;
+    line-height: 140%;
+  }
+  &__coach-name {
+    font-family: IBM Plex Mono;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 110%;
+  }
+}
+
+.ws-image {
+  max-width: 600px;
+  width: 100%;
+}
+
+.slick-dots {
+  position: relative;
+  bottom: 0;
+}
+
+#back-top {
+  display: inline;
+  bottom: 20px;
+  position: fixed;
+  right: 25px;
+  z-index: 9;
+  cursor: pointer;
+  opacity: 0;
+  & > svg {
+    &:hover {
+      color: green;
+    }
+  }
+}

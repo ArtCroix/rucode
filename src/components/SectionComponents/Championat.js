@@ -3,6 +3,7 @@ import VenuesList from "./VenuesList";
 import Slider from "react-slick";
 import BlueButton from "./BlueButton";
 import RedButton from "./RedButton";
+import Schedule from "./Schedule";
 class Championat extends React.Component {
   render() {
     function SampleNextArrow(props) {
@@ -30,6 +31,14 @@ class Championat extends React.Component {
     }
     const settings = {
       dots: true,
+      appendDots: dots => (
+        <div className="mt-4">
+          <small className="form-text text-muted">
+            <u>Фотографии предыдущих мероприятий Moscow Workshops</u>
+          </small>
+          <ul>{dots}</ul>
+        </div>
+      ),
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -88,52 +97,22 @@ class Championat extends React.Component {
               спортивному программированию
             </p>
           </div>
-          <div className="section__body-block">
-            <div className="section__body-block-schedule row mx-auto align-items-center justify-content-center no-gutters">
-              <div className="col-sm-3">
-                <div className="row align-items-center no-gutters">
-                  <img
-                    className="img-fluid"
-                    src={process.env.PUBLIC_URL + "/images/icons/calendar.svg"}
-                    alt=""
-                  />
-
-                  <div className="section__body-block-schedule-discribe col-sm-6 col-4 text-center">
-                    <span className="">&nbsp;25-26&nbsp;апреля</span>
-                  </div>
-                </div>
-              </div>
-              <div className="col-sm-3">
-                <div className="row align-items-center no-gutters justify-content-center">
-                  <img
-                    className="img-fluid"
-                    src={process.env.PUBLIC_URL + "/images/icons/watch.svg"}
-                    alt=""
-                  />
-                  <div className="section__body-block-schedule-discribe col-sm-6 col-4  text-center">
-                    <span className="">2 дня</span>
-                  </div>
-                </div>
-              </div>
-              <div className="col-sm-3">
-                <div className="row align-items-center no-gutters justify-content-end">
-                  <img
-                    className="img-fluid"
-                    src={process.env.PUBLIC_URL + "/images/icons/people.svg"}
-                    alt=""
-                  />
-                  <div className="section__body-block-schedule-discribe col-sm-6 col-4  text-center">
-                    <span className="">очный</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Schedule
+            schedule_data={{
+              p_1: "25-26 апреля",
+              p_2: "2 дня",
+              p_3: "очный",
+              img_1: "calendar.svg",
+              img_2: "watch.svg",
+              img_3: "people.svg"
+            }}
+          />
           <div className="section__body-block mt-4">
             <p className="section__body-block-text text-center super-dark-blue">
               Соревнования - это отличная возможность заявить о себе,
-              попробовать себя в командной работе, порешать задачи на реальных
-              датасетах ведущих IT-компаний.
+              попробовать себя в командной работе, попробовать порешать задачи
+              на реальных датасетах ведущих IT-компаний на трекере по
+              искусственному интеллекту.
             </p>
           </div>
           <VenuesList title="champ_venue_list" />
@@ -144,14 +123,14 @@ class Championat extends React.Component {
               </h3>
             </a>
           </div>
-          <div className="section__body-block row mt-3 mx-auto justify-content-between">
+          <div className="section__body-block row mt-3 mx-auto justify-content-center">
             <div className="col-sm-5 text-center">
               <BlueButton
                 link="https://stepik.org/invitation/d1f1c2a5acae47cf783467d49503afc27c08c113/"
                 title="ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ"
               />
             </div>
-            <div className="col-sm-6 text-center">
+            <div className="col-sm-5 text-center">
               <RedButton
                 link="https://stepik.org/invitation/d1f1c2a5acae47cf783467d49503afc27c08c113/"
                 title="СПОРТИВНОЕ ПРОГРАММИРОВАНИЕ"
@@ -160,7 +139,7 @@ class Championat extends React.Component {
           </div>
           <div className="section__body-block mx-auto text-center mt-3">
             <a href="">
-              <small id="emailHelp" className="form-text text-muted">
+              <small className="form-text text-muted">
                 <u>Положение чемпионата</u>
               </small>
             </a>
@@ -175,6 +154,7 @@ class Championat extends React.Component {
                   alt=""
                 />
               </div>
+
               <div className="carousel-element ">
                 <img
                   className="ws-image img-fluid mx-auto"
@@ -182,6 +162,7 @@ class Championat extends React.Component {
                   alt=""
                 />
               </div>
+
               <div className="carousel-element ">
                 <img
                   className="ws-image img-fluid mx-auto"
@@ -189,6 +170,7 @@ class Championat extends React.Component {
                   alt=""
                 />
               </div>
+
               <div className="carousel-element ">
                 <img
                   className="ws-image img-fluid mx-auto"
@@ -196,6 +178,7 @@ class Championat extends React.Component {
                   alt=""
                 />
               </div>
+
               <div className="carousel-element ">
                 <img
                   className="ws-image img-fluid mx-auto"
@@ -203,6 +186,7 @@ class Championat extends React.Component {
                   alt=""
                 />
               </div>
+
               <div className="carousel-element ">
                 <img
                   className="ws-image img-fluid mx-auto"

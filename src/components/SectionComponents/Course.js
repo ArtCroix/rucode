@@ -1,6 +1,7 @@
 import React from "react";
 import AccordionTemplates from "./AccordionTemplate";
 import BlueButton from "./BlueButton";
+import Schedule from "./Schedule";
 
 class Course extends React.Component {
   state = {
@@ -9,8 +10,8 @@ class Course extends React.Component {
         sub_header: "Базовые алгоритмы",
         body: `<span>Асимптотика <br>
                 Линейные алгоритмы<br>
-                Бинарный поиск.Часть 1<br>
-                Бинарный поиск.Часть 2</span>
+                Бинарный поиск. Часть 1<br>
+                Бинарный поиск. Часть 2</span>
                 `
       },
       {
@@ -19,7 +20,6 @@ class Course extends React.Component {
         Целые типы данных, решето Эратосфена<br>
         Операции по модулю<br>
 Алгоритм Евклида<br>
-Теорема Эйлера<br>
 Бинарное возведение в степень и деление по модулю</span>`
       },
       {
@@ -38,9 +38,6 @@ class Course extends React.Component {
 Обход в ширину</span>`
       }
     ]
-  };
-  simpleAction = event => {
-    this.props.simpleAction();
   };
   render() {
     return (
@@ -67,54 +64,23 @@ class Course extends React.Component {
               образовательного проекта Moscow Workshops!
             </p>
           </div>
-          <div className="section__body-block">
-            <div className="section__body-block-schedule row mx-auto align-items-center justify-content-center no-gutters">
-              <div className="col-sm-3">
-                <div className="row align-items-center no-gutters">
-                  <img
-                    className="col-sm-2 col-4"
-                    src={process.env.PUBLIC_URL + "/images/icons/calendar.svg"}
-                    alt=""
-                  />
-                  <div className="section__body-block-schedule-discribe col-sm-6 col-4 text-center">
-                    <span className="">2 марта</span>
-                  </div>
-                </div>
-              </div>
-              <div className="col-sm-3">
-                <div className="row align-items-center no-gutters justify-content-center">
-                  <img
-                    className="col-sm-2 col-4"
-                    src={process.env.PUBLIC_URL + "/images/icons/watch.svg"}
-                    alt=""
-                  />
-                  <div className="section__body-block-schedule-discribe col-sm-6 col-4  text-center">
-                    <span className="">1 месяц</span>
-                  </div>
-                </div>
-              </div>
-              <div className="col-sm-3">
-                <div className="row align-items-center no-gutters justify-content-end">
-                  <img
-                    className="col-sm-2 col-4"
-                    src={process.env.PUBLIC_URL + "/images/icons/screen.svg"}
-                    alt=""
-                  />
-
-                  <div className="section__body-block-schedule-discribe col-sm-6 col-4  text-center">
-                    <span className="">онлайн</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Schedule
+            schedule_data={{
+              p_1: "2 марта",
+              p_2: "1 месяц",
+              p_3: "онлайн",
+              img_1: "calendar.svg",
+              img_2: "watch.svg",
+              img_3: "screen.svg"
+            }}
+          />
           <div className="section__body-block mt-5">
             <p className="section__body-block-text section__body-block-text text-center super-dark-blue">
               Онлайн-курс “Быстрый старт в спортивное программирование”
               подготовлен ведущими тренерами Moscow Workshops. Курс поможет
               войти в мир спортивного программирования. Рассматриваются базовые
               теоретические и практические аспекты, необходимые для успешного
-              участия в состязании по спортивному программированию любого
+              участия в состязаниях по спортивному программированию любого
               уровня: от базовых линейных алгоритмов до основ теории графов и их
               обходов. Также рассматриваются вопросы асимптотического анализа и
               оценки эффективности программы.

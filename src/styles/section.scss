@@ -7,11 +7,8 @@
   border-radius: 10px;
   padding: 40px 1rem 60px 1rem;
   &__number-image {
-    // display: inline-block;
     top: -31px;
     max-width: 57px;
-    // left: 47%;
-    // width: 25%;
     position: absolute;
   }
   &_transparent {
@@ -37,7 +34,7 @@
     &-block {
       margin-left: auto;
       margin-right: auto;
-      max-width: 900px;
+      max-width: 1000px;
       &-text {
         font-style: normal;
         &_bold {
@@ -50,9 +47,9 @@
         text-align: center;
       }
       &-schedule {
-        // width: fit-content;
         &-discribe {
           color: #00248c;
+          // font-size: 1rem;
           font-style: normal;
           font-weight: bold;
           text-transform: uppercase;

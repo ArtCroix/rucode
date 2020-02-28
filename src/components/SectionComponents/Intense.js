@@ -1,5 +1,7 @@
 import React from "react";
 import VenuesList from "./VenuesList";
+import Schedule from "./Schedule";
+
 class Intense extends React.Component {
   render() {
     return (
@@ -25,47 +27,16 @@ class Intense extends React.Component {
               спортивному программированию в 10 городах России
             </p>
           </div>
-          <div className="section__body-block">
-            <div className="section__body-block-schedule row mx-auto align-items-center justify-content-center no-gutters">
-              <div className="col-sm-3">
-                <div className="row align-items-center no-gutters">
-                  <img
-                    className="col-sm-2 col-4"
-                    src={process.env.PUBLIC_URL + "/images/icons/calendar.svg"}
-                    alt=""
-                  />
-
-                  <div className="section__body-block-schedule-discribe col-sm-6 col-4 text-center">
-                    <span className="">&nbsp;22-24&nbsp;апреля</span>
-                  </div>
-                </div>
-              </div>
-              <div className="col-sm-3">
-                <div className="row align-items-center no-gutters justify-content-center">
-                  <img
-                    className="col-sm-2 col-4"
-                    src={process.env.PUBLIC_URL + "/images/icons/watch.svg"}
-                    alt=""
-                  />
-                  <div className="section__body-block-schedule-discribe col-sm-6 col-4  text-center">
-                    <span className="">3 дня</span>
-                  </div>
-                </div>
-              </div>
-              <div className="col-sm-3">
-                <div className="row align-items-center no-gutters justify-content-end">
-                  <img
-                    className="col-sm-2 col-4"
-                    src={process.env.PUBLIC_URL + "/images/icons/people.svg"}
-                    alt=""
-                  />
-                  <div className="section__body-block-schedule-discribe col-sm-6 col-4  text-center">
-                    <span className="">очный</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Schedule
+            schedule_data={{
+              p_1: "22-24 апреля",
+              p_2: "3 дня",
+              p_3: "очный",
+              img_1: "calendar.svg",
+              img_2: "watch.svg",
+              img_3: "people.svg"
+            }}
+          />
           <div className="section__body-block mt-4">
             <p className="section__body-block-text text-center super-dark-blue">
               На интенсивы можно попасть только по результатам отборов.

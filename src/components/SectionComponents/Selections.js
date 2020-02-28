@@ -1,5 +1,6 @@
 import React from "react";
 import BlueButton from "./BlueButton";
+import Schedule from "./Schedule";
 class Selections extends React.Component {
   render() {
     return (
@@ -21,7 +22,7 @@ class Selections extends React.Component {
         <div className="section__body">
           <div className="section__body-block">
             <p className="section__body-block-text section__body-block-text_bold text-center super-dark-blue">
-              Готов погружаться в спортивное программирование дальше? Хочешь
+              Готов погружаться в спортивное программирование еще глубже? Хочешь
               попробовать свои силы на треке искусственного интеллекта? Пройди
               отборы и прими участие в бесплатных очных интенсивах!
             </p>
@@ -32,47 +33,16 @@ class Selections extends React.Component {
               будет открыта всем желающим.
             </p>
           </div>
-          <div className="section__body-block">
-            <div className="section__body-block-schedule row mx-auto align-items-center justify-content-center no-gutters">
-              <div className="col-sm-3">
-                <div className="row align-items-center no-gutters">
-                  <img
-                    className="col-sm-2 col-4"
-                    src={process.env.PUBLIC_URL + "/images/icons/calendar.svg"}
-                    alt=""
-                  />
-
-                  <div className="section__body-block-schedule-discribe col-sm-6 col-4 text-center">
-                    <span className="">&nbsp;4-5&nbsp;апреля</span>
-                  </div>
-                </div>
-              </div>
-              <div className="col-sm-3">
-                <div className="row align-items-center no-gutters justify-content-center">
-                  <img
-                    className="col-sm-2 col-4"
-                    src={process.env.PUBLIC_URL + "/images/icons/watch.svg"}
-                    alt=""
-                  />
-                  <div className="section__body-block-schedule-discribe col-sm-6 col-4  text-center">
-                    <span className="">2 дня</span>
-                  </div>
-                </div>
-              </div>
-              <div className="col-sm-3">
-                <div className="row align-items-center no-gutters justify-content-end">
-                  <img
-                    className="col-sm-2 col-4"
-                    src={process.env.PUBLIC_URL + "/images/icons/screen.svg"}
-                    alt=""
-                  />
-                  <div className="section__body-block-schedule-discribe col-sm-6 col-4  text-center">
-                    <span className="">онлайн</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Schedule
+            schedule_data={{
+              p_1: "4-5 апреля",
+              p_2: "2 дня",
+              p_3: "онлайн",
+              img_1: "calendar.svg",
+              img_2: "watch.svg",
+              img_3: "screen.svg"
+            }}
+          />
           <div className="section__body-block mt-5 text-center mx-auto">
             <BlueButton
               link="https://stepik.org/invitation/d1f1c2a5acae47cf783467d49503afc27c08c113/"

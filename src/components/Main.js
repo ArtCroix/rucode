@@ -10,11 +10,12 @@ import Reviews from "./SectionComponents/Reviews";
 import Partners from "./SectionComponents/Partners";
 import InfoPartners from "./SectionComponents/InfoPartners";
 import FAQ from "./SectionComponents/FAQ";
+import ScrollTop from "./SectionComponents/ScrollTop";
 
 class Main extends React.Component {
   render() {
     return (
-      <main className="main container-fluid">
+      <main id="main" className="main container-fluid">
         <div className="main__content mx-auto">
           <About />
           <Course />
@@ -25,6 +26,7 @@ class Main extends React.Component {
           <Coaches />
           {/* <Reviews /> */}
           <Partners />
+          <ScrollTop />
           {/* <InfoPartners /> */}
           {/* <FAQ /> */}
         </div>

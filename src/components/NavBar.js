@@ -3,8 +3,8 @@ import { Nav, Navbar, Container } from "react-bootstrap";
 import axios from "axios";
 
 import { connect } from "react-redux";
-import Scrollspy from "react-scrollspy";
-import ScrollspyNav from "react-scrollspy-nav";
+
+import ScrollspyNav from "./SectionComponents/ScrollspyNav";
 /* function mapStateToProps(state, ownProps) {
   const { fio } = state;
 
@@ -28,53 +28,34 @@ class NavigationBar extends React.Component {
 
   render() {
     return (
-      <Navbar fixed="top" className="bg_blue mx-auto p-0" expand="lg">
+      <Navbar
+        id="nav"
+        fixed="top"
+        className="nav bg_blue mx-auto p-0"
+        expand="lg"
+      >
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse
-          className="px-3 mx-auto justify-content-center"
+          className="px-3 mx-auto justify-content-around"
           id="basic-navbar-nav"
         >
-          <Navbar.Brand href="#home" className="ml-3">
-            <img
-              src={process.env.PUBLIC_URL + "/images/logos/rucode_nav.png"}
-              alt=""
-            />
-          </Navbar.Brand>
           <ScrollspyNav
-            scrollTargetIds={[
-              "regions",
-              "coaches",
-              "partners"
-              /*           "about",
-              "course",
-              "selections",
-              "intense",
-              "championat",
-              "reviews",
-              "faq" */
-            ]}
+            scrollTargetIds={["regions", "coaches", "partners"]}
             activeNavClass="nav-link_is-active"
             scrollDuration="1000"
-            offset="0"
             headerBackground="true"
-            // headerBackground="true"
           >
             <Nav className="mx-auto align-items-center">
+              <Nav.Link href="#nav" className="">
+                <img
+                  src={process.env.PUBLIC_URL + "/images/logos/rucode_nav.png"}
+                  alt=""
+                />
+              </Nav.Link>
               <Nav.Link href="" className="">
                 Фестиваль
               </Nav.Link>
-              {/*               <Nav.Link href="#course" className="">
-                Онлайн-курс
-              </Nav.Link>
-              <Nav.Link href="#selections" className="">
-                Отборы
-              </Nav.Link>
-              <Nav.Link href="#intense" className="">
-                Интенсивы
-              </Nav.Link>
-              <Nav.Link href="#championat" className="">
-                Чемпионат
-              </Nav.Link> */}
+
               <Nav.Link href="#regions" className="">
                 Регионы
               </Nav.Link>
@@ -86,6 +67,9 @@ class NavigationBar extends React.Component {
               </Nav.Link>
               {this.state.fio === 0 && (
                 <Nav.Link
+                  onClick={() => {
+                    window.open("https://it-edu.com/rucode");
+                  }}
                   href="https://it-edu.com/rucode"
                   className="text-white"
                 >
@@ -97,7 +81,12 @@ class NavigationBar extends React.Component {
                   {this.state.fio}
                 </Nav.Link>
               )}
-              <Nav.Link href="#home">
+              <Nav.Link
+                href="https://it-edu.com/"
+                onClick={() => {
+                  window.open("https://it-edu.com");
+                }}
+              >
                 <img
                   src={process.env.PUBLIC_URL + "/images/logos/lited.png"}
                   alt=""
