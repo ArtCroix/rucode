@@ -24,18 +24,31 @@ class Footer extends React.Component {
           <div className="col-sm-1 text-center text-sm-right ml-auto"></div>
           <div className="row align-items-center justify-content-between justify-content-sm-start no-gutter">
             <div className="col-sm-6 col-3 text-center">
-              <img
-                className="img-fluid"
-                src={process.env.PUBLIC_URL + "/images/logos/fpgbg.png"}
-                alt=""
-              />
+              <a
+                href="https://оценка.гранты.рф/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  className="img-fluid"
+                  src={process.env.PUBLIC_URL + "/images/logos/fpgbg.png"}
+                  alt=""
+                />
+              </a>
             </div>
+
             <div className="col-sm-6 col-3 text-center">
-              <img
-                className="img-fluid"
-                src={process.env.PUBLIC_URL + "/images/logos/lited.png"}
-                alt=""
-              />
+              <a
+                href="https://it-edu.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  className="img-fluid"
+                  src={process.env.PUBLIC_URL + "/images/logos/lited.png"}
+                  alt=""
+                />
+              </a>
             </div>
           </div>
         </div>

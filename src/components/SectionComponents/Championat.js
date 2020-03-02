@@ -126,13 +126,13 @@ class Championat extends React.Component {
           <div className="section__body-block row mt-3 mx-auto justify-content-center">
             <div className="col-sm-5 text-center">
               <BlueButton
-                link="https://stepik.org/invitation/d1f1c2a5acae47cf783467d49503afc27c08c113/"
+                link="https://it-edu.com/rucode"
                 title="ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ"
               />
             </div>
             <div className="col-sm-5 text-center">
               <RedButton
-                link="https://stepik.org/invitation/d1f1c2a5acae47cf783467d49503afc27c08c113/"
+                link="https://it-edu.com/rucode"
                 title="СПОРТИВНОЕ ПРОГРАММИРОВАНИЕ"
               />
             </div>
@@ -151,14 +151,6 @@ class Championat extends React.Component {
                 <img
                   className="ws-image img-fluid mx-auto"
                   src={process.env.PUBLIC_URL + "/images/ws_photo/ws1.jpg"}
-                  alt=""
-                />
-              </div>
-
-              <div className="carousel-element ">
-                <img
-                  className="ws-image img-fluid mx-auto"
-                  src={process.env.PUBLIC_URL + "/images/ws_photo/ws2.jpg"}
                   alt=""
                 />
               </div>
