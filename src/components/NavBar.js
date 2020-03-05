@@ -20,7 +20,7 @@ class NavigationBar extends React.Component {
     this.state = { auht: false, fio: 0 };
   }
   componentDidMount() {
-    axios.post(`https://it-edu.com/rucode/ajax.php`).then(res => {
+    axios.post(`https://rucode.net/lk/ajax.php`).then(res => {
       let fio = res.data;
       this.setState({ fio });
     });
@@ -68,16 +68,16 @@ class NavigationBar extends React.Component {
               {this.state.fio === 0 && (
                 <Nav.Link
                   onClick={() => {
-                    window.open("https://it-edu.com/rucode");
+                    window.open("https://rucode.net/lk");
                   }}
-                  href="https://it-edu.com/rucode"
+                  href="https://rucode.net/lk"
                   className="text-white"
                 >
                   Регистрация/Вход
                 </Nav.Link>
               )}
               {this.state.fio !== 0 && (
-                <Nav.Link href="" className="">
+                <Nav.Link href="https://rucode.net/lk">
                   {this.state.fio}
                 </Nav.Link>
               )}

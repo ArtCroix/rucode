@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+/rucode_moodledata
+/lk
 /.pnp
 .pnp.js
 

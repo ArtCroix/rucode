@@ -45,7 +45,7 @@ class Selections extends React.Component {
           />
           <div className="section__body-block mt-5 text-center mx-auto">
             <BlueButton
-              link="https://it-edu.com/rucode"
+              link="https://rucode.net/lk"
               title="участие в отборах"
             />
           </div>

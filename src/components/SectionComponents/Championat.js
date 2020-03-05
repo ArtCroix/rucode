@@ -117,7 +117,11 @@ class Championat extends React.Component {
           </div>
           <VenuesList title="champ_venue_list" />
           <div className="section__body-block mt-4">
-            <a href="http://" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://rucode.net/lk"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <h3 className="section__body-block-text_bold text-center dark-blue">
                 ЗАРЕГИСТРИРОВАТЬСЯ
               </h3>
@@ -126,13 +130,13 @@ class Championat extends React.Component {
           <div className="section__body-block row mt-3 mx-auto justify-content-center">
             <div className="col-sm-5 text-center">
               <BlueButton
-                link="https://it-edu.com/rucode"
+                link="https://rucode.net/lk"
                 title="ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ"
               />
             </div>
             <div className="col-sm-5 text-center">
               <RedButton
-                link="https://it-edu.com/rucode"
+                link="https://rucode.net/lk"
                 title="СПОРТИВНОЕ ПРОГРАММИРОВАНИЕ"
               />
             </div>
@@ -175,14 +179,6 @@ class Championat extends React.Component {
                 <img
                   className="ws-image img-fluid mx-auto"
                   src={process.env.PUBLIC_URL + "/images/ws_photo/ws5.jpg"}
-                  alt=""
-                />
-              </div>
-
-              <div className="carousel-element ">
-                <img
-                  className="ws-image img-fluid mx-auto"
-                  src={process.env.PUBLIC_URL + "/images/ws_photo/ws6.jpg"}
                   alt=""
                 />
               </div>

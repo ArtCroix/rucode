@@ -21,6 +21,11 @@ class VenuesList extends React.Component {
 `
       },
       {
+        sub_header: "Иннополис",
+        body: `
+`
+      },
+      {
         sub_header: "Иркутск",
         body: ``
       },
