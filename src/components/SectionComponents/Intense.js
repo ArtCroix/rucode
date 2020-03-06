@@ -1,8 +1,33 @@
 import React from "react";
 import VenuesList from "./VenuesList";
 import Schedule from "./Schedule";
-
+import AccordionTemplates from "./AccordionTemplate";
 class Intense extends React.Component {
+  state = {
+    accordionData: [
+      {
+        sub_header: "Дивизион D",
+        body: `<span>
+        1) Рекурсивные переборы<br>
+                2) Поиск кратчайших путей во взвешенном графе. Алгоритм Дейкстры;<br>
+                3) Вычислительная геометрия: точки, прямые, отрезки, их взаимное расположение, поиск точек пересечения;<br>
+                4) Динамическое программирование: поиск наибольшей возрастающей подпоследовательности, наибольшей общей подпоследовательности;<br>
+                5) Деревья. Поиск диаметра, центра, центроида. Динамическое программирование на поддеревьях.
+                </span>
+                `
+      },
+      {
+        sub_header: "Дивизион С",
+        body: `<span>
+        1) Остовные деревья. Алгоритмы Прима, Краскала;<br>
+        2) Поиск кратчайших путей в граеф. Алгоритмы Флойда, Форда-Беллмана;<br>
+3) Вычислительная геометрия. Многоугольники. Проверка того, лежит ли точка в многоугольнике (offline за O(n) и online в выпуклом за O(log n)). Площадь многоугольника: метод трапеций и метод треугольников. Площадь пересечения окружности и многоугольника;<br>
+4) Динамическое программирование: поиска номера объекта (перестановки, сочетания, ПСП и т.п.), поиск объекта по номеру;<br>
+5) Теория чисел: решение диофантовых уравнений, китайская теорема об остатках.
+</span>`
+      }
+    ]
+  };
   render() {
     return (
       <section id="intense" className="main section">
@@ -43,6 +68,18 @@ class Intense extends React.Component {
             </p>
           </div>
           <VenuesList title="intense_venue_list" />
+          <div className="section__body-block mt-5">
+            <AccordionTemplates
+              header={"ПРОГРАММА ИНТЕНСИВОВ*"}
+              title={"intense"}
+              accordionData={this.state.accordionData}
+            ></AccordionTemplates>
+            <div className="section__body-block mx-auto text-center mt-3">
+              <small className="form-text text-muted">
+                *Программа может меняться по усмотрению организатора
+              </small>
+            </div>
+          </div>
         </div>
       </section>
     );

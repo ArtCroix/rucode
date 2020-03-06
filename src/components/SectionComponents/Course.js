@@ -96,12 +96,13 @@ class Course extends React.Component {
               allowFullScreen
             ></iframe>
           </div>
-          <AccordionTemplates
-            header={"Программа курса"}
-            title={"course"}
-            accordionData={this.state.accordionData}
-          ></AccordionTemplates>
-
+          <div className="section__body-block mt-3">
+            <AccordionTemplates
+              header={"Программа курса"}
+              title={"course"}
+              accordionData={this.state.accordionData}
+            ></AccordionTemplates>
+          </div>
           <div className="section__body-block mt-5 text-center mx-auto">
             <BlueButton
               link="https://stepik.org/invitation/d1f1c2a5acae47cf783467d49503afc27c08c113/"
