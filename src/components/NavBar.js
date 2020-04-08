@@ -1,23 +1,18 @@
 import React from "react";
 import { Nav, Navbar, Container } from "react-bootstrap";
 import axios from "axios";
-
+import localeAction from "../actions/LocaleAction";
 import { connect } from "react-redux";
-
 import ScrollspyNav from "./SectionComponents/ScrollspyNav";
-/* function mapStateToProps(state, ownProps) {
-  const { fio } = state;
 
-  // component receives additionally:
-  return { fio: fio };
-}
+const mapStateToProps = (store, ownProps) => {
+  return { store };
+};
 
-console.log(mapStateToProps); */
 class NavigationBar extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
-    this.state = { auht: false, fio: 0 };
+    this.state = { auht: false, fio: 0, locale: props.store.locale };
   }
   componentDidMount() {
     axios.post(`https://rucode.net/lk/ajax.php`).then(res => {
@@ -25,6 +20,27 @@ class NavigationBar extends React.Component {
       this.setState({ fio });
     });
   }
+
+  setLocale = locale => {
+    this.props.localeAction(locale);
+    this.setState({ locale: locale });
+    function replaceQueryString(url, param, value) {
+      var re = new RegExp("([?|&])" + param + "=.*?(&|$)", "i");
+      if (url.match(re))
+        return url.replace(re, "$1" + param + "=" + value + "$2");
+      else return url + param + "=" + value;
+    }
+    if ("URLSearchParams" in window) {
+      var searchParams = new URLSearchParams(window.location.search);
+      // searchParams.set("/?lang", locale);
+      window.history.replaceState(
+        null,
+        "lang",
+        replaceQueryString(window.location.href + "?", "lang", locale)
+      );
+      // window.location.href = searchParams.toString();
+    }
+  };
 
   render() {
     return (
@@ -53,27 +69,52 @@ class NavigationBar extends React.Component {
                 />
               </Nav.Link>
               <Nav.Link href="" className="">
-                Фестиваль
+                {this.props.store.locale == "ru" && "Фестиваль"}
+                {this.props.store.locale == "en" && "Festival"}
               </Nav.Link>
 
-              <Nav.Link href="#regions" className="">
-                Регионы
-              </Nav.Link>
-              <Nav.Link href="#coaches" className="">
-                Тренеры
-              </Nav.Link>
-              <Nav.Link href="#partners" className="">
-                Партнёры
-              </Nav.Link>
+              {this.props.store.locale == "ru" && (
+                <Nav.Link href="#regions" className="">
+                  Регионы
+                </Nav.Link>
+              )}
+
+              {this.props.store.locale == "en" && (
+                <Nav.Link href="#regions" className="d-none"></Nav.Link>
+              )}
+
+              {this.props.store.locale == "ru" && (
+                <Nav.Link href="#coaches" className="">
+                  Тренеры
+                </Nav.Link>
+              )}
+              {this.props.store.locale == "en" && (
+                <Nav.Link href="#coaches" className="d-none"></Nav.Link>
+              )}
+              {this.props.store.locale == "ru" && (
+                <Nav.Link href="#partners" className="">
+                  Партнёры
+                </Nav.Link>
+              )}
+              {this.props.store.locale == "en" && (
+                <Nav.Link href="#partners" className="">
+                  Partners
+                </Nav.Link>
+              )}
               {this.state.fio === 0 && (
                 <Nav.Link
                   onClick={() => {
                     window.open("https://rucode.net/lk");
                   }}
-                  href="https://rucode.net/lk"
+                  href={
+                    this.props.store.locale == "ru"
+                      ? "https://rucode.net/lk"
+                      : "https://rucode.net/lk?lang=en"
+                  }
                   className="text-white"
                 >
-                  Регистрация/Вход
+                  {this.props.store.locale == "ru" && "Регистрация / Вход"}
+                  {this.props.store.locale == "en" && "Registration / Entrance"}
                 </Nav.Link>
               )}
               {this.state.fio !== 0 && (
@@ -92,6 +133,26 @@ class NavigationBar extends React.Component {
                   alt=""
                 />
               </Nav.Link>
+              <Nav.Item>
+                {this.props.store.locale == "en" && (
+                  <button
+                    onClick={e => this.setLocale("ru")}
+                    type="button"
+                    className="btn btn-success"
+                  >
+                    RU
+                  </button>
+                )}
+                {this.props.store.locale == "ru" && (
+                  <button
+                    onClick={e => this.setLocale("en")}
+                    type="button"
+                    className="btn btn-success"
+                  >
+                    EN
+                  </button>
+                )}
+              </Nav.Item>
             </Nav>
           </ScrollspyNav>
         </Navbar.Collapse>
@@ -100,4 +161,4 @@ class NavigationBar extends React.Component {
   }
 }
 // export default connect(mapStateToProps)(NavigationBar);
-export default NavigationBar;
+export default connect(mapStateToProps, { localeAction })(NavigationBar);

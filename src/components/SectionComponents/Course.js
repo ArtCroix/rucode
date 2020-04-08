@@ -2,7 +2,11 @@ import React from "react";
 import AccordionTemplates from "./AccordionTemplate";
 import BlueButton from "./BlueButton";
 import Schedule from "./Schedule";
-
+import localeAction from "../../actions/LocaleAction";
+import { connect } from "react-redux";
+const mapStateToProps = (store, ownProps) => {
+  return { store };
+};
 class Course extends React.Component {
   state = {
     accordionData: [
@@ -39,6 +43,12 @@ class Course extends React.Component {
       }
     ]
   };
+  constructor(props) {
+    super(props);
+  }
+  componentDidMount() {
+    this.setState({ locale: this.props.store.locale });
+  }
   render() {
     return (
       <section id="course" className="main section">
@@ -52,39 +62,83 @@ class Course extends React.Component {
 
         <div className="section__header">
           <h3>
-            <b>
-              Онлайн-курс<span className="section__header-dash">_</span>
-            </b>
+            {this.props.store.locale == "ru" && (
+              <b>
+                Онлайн-курс<span className="section__header-dash">_</span>
+              </b>
+            )}
+            {this.props.store.locale == "en" && (
+              <b>
+                ONLINE COURSE<span className="section__header-dash">_</span>
+              </b>
+            )}
           </h3>
         </div>
         <div className="section__body">
           <div className="section__body-block">
-            <p className="section__body-block-text section__body-block-text_bold text-center super-dark-blue">
-              Прокачай свои знания с ведущими тренерами международного
-              образовательного проекта Moscow Workshops!
-            </p>
+            {this.props.store.locale == "ru" && (
+              <p className="section__body-block-text section__body-block-text_bold text-center super-dark-blue">
+                Прокачай свои знания с ведущими тренерами международного
+                образовательного проекта Moscow Workshops!
+              </p>
+            )}
+            {this.props.store.locale == "en" && (
+              <p className="section__body-block-text section__body-block-text_bold text-center super-dark-blue">
+                Improve your knowledge with the leading trainers of the
+                international educational project Moscow Workshops!
+              </p>
+            )}
           </div>
-          <Schedule
-            schedule_data={{
-              p_1: "2 марта",
-              p_2: "1 месяц",
-              p_3: "онлайн",
-              img_1: "calendar.svg",
-              img_2: "watch.svg",
-              img_3: "screen.svg"
-            }}
-          />
+          {this.props.store.locale == "ru" && (
+            <Schedule
+              schedule_data={{
+                p_1: "2 марта",
+                p_2: "1 месяц",
+                p_3: "онлайн",
+                img_1: "calendar.svg",
+                img_2: "watch.svg",
+                img_3: "screen.svg"
+              }}
+            />
+          )}
+          {this.props.store.locale == "en" && (
+            <Schedule
+              schedule_data={{
+                p_1: "MARCH, 2",
+                p_2: "MOUNTH",
+                p_3: "ONLINE",
+                img_1: "calendar.svg",
+                img_2: "watch.svg",
+                img_3: "screen.svg"
+              }}
+            />
+          )}
           <div className="section__body-block mt-5">
-            <p className="section__body-block-text section__body-block-text text-center super-dark-blue">
-              Онлайн-курс “Быстрый старт в спортивное программирование”
-              подготовлен ведущими тренерами Moscow Workshops. Курс поможет
-              войти в мир спортивного программирования. Рассматриваются базовые
-              теоретические и практические аспекты, необходимые для успешного
-              участия в состязаниях по спортивному программированию любого
-              уровня: от базовых линейных алгоритмов до основ теории графов и их
-              обходов. Также рассматриваются вопросы асимптотического анализа и
-              оценки эффективности программы.
-            </p>
+            {this.props.store.locale == "ru" && (
+              <p className="section__body-block-text section__body-block-text text-center super-dark-blue">
+                Онлайн-курс “Быстрый старт в спортивное программирование”
+                подготовлен ведущими тренерами Moscow Workshops. Курс поможет
+                войти в мир спортивного программирования. Рассматриваются
+                базовые теоретические и практические аспекты, необходимые для
+                успешного участия в состязаниях по спортивному программированию
+                любого уровня: от базовых линейных алгоритмов до основ теории
+                графов и их обходов. Также рассматриваются вопросы
+                асимптотического анализа и оценки эффективности программы.
+              </p>
+            )}
+            {this.props.store.locale == "en" && (
+              <p className="section__body-block-text section__body-block-text text-center super-dark-blue">
+                The online course "Fast start in Competitive programming " is
+                prepared by the leading coaches of Moscow Workshops. The course
+                will help you enter the world of Competitive programming. The
+                basic theoretical and practical aspects necessary for successful
+                participation in Competitive programming competitions at any
+                level are considered: from basic linear algorithms to the basics
+                of graph theory and their traversals. We also consider the
+                issues of asymptotic analysis and evaluating the effectiveness
+                of the program.
+              </p>
+            )}
           </div>
           <div className="section__body-block mt-5 text-center mx-auto embed-responsive embed-responsive-16by9 mb-4">
             <iframe
@@ -115,4 +169,4 @@ class Course extends React.Component {
   }
 }
 
-export default Course;
+export default connect(mapStateToProps, { localeAction })(Course);

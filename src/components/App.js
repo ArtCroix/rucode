@@ -5,14 +5,12 @@ import axios from "axios";
 
 import Footer from "./Footer";
 import { connect } from "react-redux";
-import { simpleAction } from "../actions/simpleAction";
-import { loginAction } from "../actions/loginAction";
+import localeAction from "../actions/LocaleAction";
 const mapStateToProps = state => ({
   ...state
 });
 const mapDispatchToProps = dispatch => ({
-  simpleAction: () => dispatch(simpleAction()),
-  loginAction: () => dispatch(loginAction())
+  localeAction: () => dispatch(localeAction("en"))
 });
 class App extends Component {
   simpleAction = event => {

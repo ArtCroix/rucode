@@ -3,14 +3,16 @@ import ReactDOM from "react-dom";
 import "./styles/app.scss";
 import App from "./components/App";
 import * as serviceWorker from "./serviceWorker";
+import { createStore } from "redux";
+import RootReducer from "./reducers";
 import { Provider } from "react-redux";
-import configureStore from "./store";
+let store = createStore(RootReducer);
 // import "bootstrap/dist/css/bootstrap.min.css";
 
 // import "bootstrap/dist/js/bootstrap.bundle.min";
 
 ReactDOM.render(
-  <Provider store={configureStore()}>
+  <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById("root")

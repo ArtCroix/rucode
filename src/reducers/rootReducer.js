@@ -1,7 +1,6 @@
 import { combineReducers } from "redux";
-import simpleReducer from "./simpleReducer";
-import loginReducer from "./loginReducer";
+import locale from "./SetLocale";
+
 export default combineReducers({
-  simpleReducer,
-  loginReducer
+  locale
 });

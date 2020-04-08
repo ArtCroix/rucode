@@ -8,6 +8,7 @@ import Regions from "./SectionComponents/Regions";
 import Coaches from "./SectionComponents/Coaches";
 import Reviews from "./SectionComponents/Reviews";
 import Partners from "./SectionComponents/Partners";
+import Organizers from "./SectionComponents/Organizers";
 import InfoPartners from "./SectionComponents/InfoPartners";
 import FAQ from "./SectionComponents/FAQ";
 import ScrollTop from "./SectionComponents/ScrollTop";
@@ -25,9 +26,10 @@ class Main extends React.Component {
           <Regions />
           <Coaches />
           {/* <Reviews /> */}
+          <Organizers />
           <Partners />
+          <InfoPartners />
           <ScrollTop />
-          {/* <InfoPartners /> */}
           {/* <FAQ /> */}
         </div>
       </main>

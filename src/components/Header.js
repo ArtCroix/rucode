@@ -1,7 +1,19 @@
 import React from "react";
 import NavBar from "./NavBar";
 import BlueButton from "./SectionComponents/BlueButton";
+import localeAction from "../actions/LocaleAction";
+import { connect } from "react-redux";
+const mapStateToProps = (store, ownProps) => {
+  return { store };
+};
+
 class Header extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  componentDidMount() {
+    this.setState({ locale: this.props.store.locale });
+  }
   render() {
     return (
       <>
@@ -21,15 +33,26 @@ class Header extends React.Component {
               </div>
               <div className="header__info-container-item ml-1 col-6">
                 <h3 className="header__info-container-item-text text-white">
-                  Всероссийский фестиваль по искусственному интеллекту и
-                  спортивному программированию
+                  {this.props.store.locale == "ru" &&
+                    "Всероссийский онлайн фестиваль по искусственному интеллекту и спортивному программированию"}
                 </h3>
-                <p className="header__info-container-item-date my-4 text-left">
-                  22—26 апреля 2020
-                </p>
+                <h3 className="header__info-container-item-text text-white">
+                  {this.props.store.locale == "en" &&
+                    "All-Russian festival on Artificial intelligence and Competitive programming"}
+                </h3>
+                {this.props.store.locale == "ru" && (
+                  <p className="header__info-container-item-date my-4 text-left">
+                    22—26 апреля 2020
+                  </p>
+                )}
+                {this.props.store.locale == "en" && (
+                  <p className="header__info-container-item-date my-4 text-left">
+                    APRIL 22-26, 2020
+                  </p>
+                )}
                 <BlueButton
-                  link="https://stepik.org/invitation/d1f1c2a5acae47cf783467d49503afc27c08c113/"
-                  title="поступить на онлайн-курс"
+                  link="https://rucode.net/lk"
+                  title="зарегистрироваться на отборы"
                 />
               </div>
             </div>
@@ -40,4 +63,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default connect(mapStateToProps, { localeAction })(Header);

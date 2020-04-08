@@ -2,6 +2,11 @@ import React from "react";
 import VenuesList from "./VenuesList";
 import Schedule from "./Schedule";
 import AccordionTemplates from "./AccordionTemplate";
+import localeAction from "../../actions/LocaleAction";
+import { connect } from "react-redux";
+const mapStateToProps = (store, ownProps) => {
+  return { store };
+};
 class Intense extends React.Component {
   state = {
     accordionData: [
@@ -28,6 +33,12 @@ class Intense extends React.Component {
       }
     ]
   };
+  constructor(props) {
+    super(props);
+  }
+  componentDidMount() {
+    this.setState({ locale: this.props.store.locale });
+  }
   render() {
     return (
       <section id="intense" className="main section">
@@ -40,50 +51,107 @@ class Intense extends React.Component {
         </div>
         <div className="section__header">
           <h3>
-            <b>
-              Интенсивы<span className="section__header-dash">_</span>
-            </b>
+            {this.props.store.locale == "ru" && (
+              <b>
+                Интенсивы<span className="section__header-dash">_</span>
+              </b>
+            )}
+            {this.props.store.locale == "en" && (
+              <b>
+                INTENSIVE COURSE<span className="section__header-dash">_</span>
+              </b>
+            )}
           </h3>
         </div>
         <div className="section__body">
           <div className="section__body-block">
-            <p className="section__body-block-text section__body-block-text_bold text-center  super-dark-blue">
-              Очные занятия с ведущими тренерами по искусственному интеллекту и
-              спортивному программированию в 10 городах России
-            </p>
+            {this.props.store.locale == "ru" && (
+              <p className="section__body-block-text section__body-block-text_bold text-center  super-dark-blue">
+                Интерактивные занятия с ведущими тренерами по искусственному
+                интеллекту и спортивному программированию
+              </p>
+            )}
+            {this.props.store.locale == "en" && (
+              <p className="section__body-block-text section__body-block-text_bold text-center  super-dark-blue">
+                Interactive sessions with leading trainers in Artificial
+                intelligence and Competitive programming
+              </p>
+            )}
           </div>
-          <Schedule
-            schedule_data={{
-              p_1: "22-24 апреля",
-              p_2: "3 дня",
-              p_3: "очный",
-              img_1: "calendar.svg",
-              img_2: "watch.svg",
-              img_3: "people.svg"
-            }}
-          />
-          <div className="section__body-block mt-4">
-            <p className="section__body-block-text text-center super-dark-blue">
-              На интенсивы можно попасть только по результатам отборов.
-            </p>
-          </div>
-          <VenuesList title="intense_venue_list" />
-          <div className="section__body-block mt-5">
-            <AccordionTemplates
-              header={"ПРОГРАММА ИНТЕНСИВОВ*"}
-              title={"intense"}
-              accordionData={this.state.accordionData}
-            ></AccordionTemplates>
-            <div className="section__body-block mx-auto text-center mt-3">
-              <small className="form-text text-muted">
-                *Программа может меняться по усмотрению организатора
-              </small>
+          {this.props.store.locale == "ru" && (
+            <div className="section__body-block mt-4">
+              <p className="section__body-block-text text-left super-dark-blue">
+                <strong>Трек по спортивному программированию</strong> - лучшие
+                участники отбора будут поделены на дивизионы по уровню сложности
+                - С и D. Интерактивные интенсивы пройдут с 22 по 24 апреля в
+                формате онлайн-лекций, контестов и онлайн-разборов. За три дня
+                предстоит осилить 10 часов лекционных занятий и 15 часов
+                практических. Темы: вычислительная геометрия, динамическое
+                программирование, теория чисел, особенности работы с алгоритмами
+                и другие. Лекторы курса – преподаватели крупнейших вузов России
+                (МФТИ, НГУ, ДФУ).
+              </p>
+              <p className="section__body-block-text text-left super-dark-blue">
+                <strong>Трек по искусственному интеллекту</strong> - обучение
+                пройдет в формате онлайн-лекций и работы над своим проектом. С
+                10 по 21 апреля состоится 8 лекций. Лекторы курса –
+                преподаватели МФТИ и эксперты крупных IT-компаний. По
+                результатам интенсивов 25 лучших студентов будут представлять
+                свои проекты. Трек и задачи разработаны МФТИ, Сбербанком и
+                Аналитическим центром при Правительстве Российской Федерации.
+              </p>
             </div>
-          </div>
+          )}
+          {this.props.store.locale == "ru" && (
+            <Schedule
+              schedule_data={{
+                p_1: "22-24 апреля",
+                p_2: "3 дня",
+                p_3: "онлайн",
+                img_1: "calendar.svg",
+                img_2: "watch.svg",
+                img_3: "people.svg"
+              }}
+            />
+          )}
+          {this.props.store.locale == "en" && (
+            <Schedule
+              schedule_data={{
+                p_1: "APRIL, 22 - 24",
+                p_2: "3 DAYS ",
+                p_3: "ONLINE",
+                img_1: "calendar.svg",
+                img_2: "watch.svg",
+                img_3: "people.svg"
+              }}
+            />
+          )}
+          {this.props.store.locale == "ru" && (
+            <>
+              <div className="section__body-block mt-4">
+                <p className="section__body-block-text text-center super-dark-blue">
+                  На интенсивы можно попасть только по результатам отборов.
+                </p>
+              </div>
+              {/* <VenuesList title="intense_venue_list" /> */}
+              <div className="section__body-block mt-5">
+                <AccordionTemplates
+                  header={"ПРОГРАММА ИНТЕНСИВОВ*"}
+                  title={"intense"}
+                  accordionData={this.state.accordionData}
+                ></AccordionTemplates>
+                <div className="section__body-block mx-auto text-center mt-3">
+                  <small className="form-text text-muted">
+                    *Программа может меняться по усмотрению организатора
+                  </small>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </section>
     );
   }
 }
 
-export default Intense;
+export default connect(mapStateToProps, { localeAction })(Intense);
